@@ -30,8 +30,9 @@ provider:
   # These environment variables are made available to our functions
   # under process.env.
   environment:
-    tableName:
-      Ref: NotesTable
+    #tableName:
+    #  Ref: NotesTable
+    tableName: ${self:custom.stage}-notes
 
   iamRoleStatements:
     - Effect: Allow
