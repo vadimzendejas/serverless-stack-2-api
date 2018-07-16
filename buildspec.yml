@@ -1,0 +1,13 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - npm install
+      - npm install -g jest
+      - npm install -g serverless
+  build:
+    commands:
+      - serverless deploy --stage test | tee deploy.out 
+  post_build:
+    commands:
+      - npm test
